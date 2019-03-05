@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MessageViewController.swift
 //  FirChat
 //
 //  Created by Ilgar Ilyasov on 3/5/19.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MessageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-
 }
-
