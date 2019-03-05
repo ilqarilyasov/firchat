@@ -1,0 +1,9 @@
+[submodule "FirChat/Frameworks/MessageKit"]
+	path = FirChat/Frameworks/MessageKit
+	url = https://github.com/MessageKit/MessageKit.git
+[submodule "FirChat/Frameworks/MessageInputBar"]
+	path = FirChat/Frameworks/MessageInputBar
+	url = https://github.com/MessageKit/MessageInputBar.git
+[submodule "FirChat/Frameworks/MessageLabel"]
+	path = FirChat/Frameworks/MessageLabel
+	url = https://github.com/MessageKit/MessageLabel.git
