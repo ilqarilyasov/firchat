@@ -36,7 +36,13 @@
                             <outlet property="delegate" destination="7Eo-4D-CwZ" id="zuP-dp-JRa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7TH-8S-hS8"/>
+                    <navigationItem key="navigationItem" id="7TH-8S-hS8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mWu-Gr-eRm">
+                            <connections>
+                                <action selector="addChatRoom:" destination="7Eo-4D-CwZ" id="pXV-oa-Guz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2t-b2-xgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,8 +53,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q7T-sh-Lqw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KF0-nY-RRW">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="KF0-nY-RRW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
