@@ -25,17 +25,30 @@ class ChatRoomsTableViewController: UITableViewController {
     
     @IBAction func addChatRoom(_ sender: Any) {
         let alert = UIAlertController(title: "Add new chat room", message: nil, preferredStyle: .alert)
-        var alertTextField: UITextField!
+        var roomTextField: UITextField!
+        var userTextField: UITextField?
         alert.addTextField { (textField) in
             textField.placeholder = "Room name"
-            alertTextField = textField
+            roomTextField = textField
+        }
+        
+        if (UserDefaults.standard.object(forKey: "currentUser") == nil) {
+            alert.addTextField { (textField) in
+                textField.placeholder = "User name"
+                userTextField = textField
+            }
         }
         
         let dismiss = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
         let add = UIAlertAction(title: "Add", style: .default) { (action) in
-            if let text = alertTextField.text {
+            if let text = roomTextField.text {
                 self.controller.createChatRoom(with: text.localizedCapitalized)
                 NotificationCenter.default.post(name: self.newRoom, object: nil)
+            }
+            
+            if let user = userTextField?.text {
+                let currentUser = [UUID().uuidString: user]
+                UserDefaults.standard.set(currentUser, forKey: "currentUser")
             }
         }
         
@@ -66,7 +79,9 @@ class ChatRoomsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowRoom" {
-            
+            let destionationVC = segue.destination as! MessageViewController
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            destionationVC.chatRoom = controller.chatRooms[indexPath.row]
         }
     }
 
